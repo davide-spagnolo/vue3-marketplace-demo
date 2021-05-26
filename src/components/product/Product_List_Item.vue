@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-      <img v-bind:src="productItem.fields.image.fields.file.url">
+      <img v-bind:src="`${publicPath}`+productItem.fields.image.fields.file.url">
       <div class="card-content">
         <div class="content">
           <h4>{{ productItem.fields.title }}</h4>
@@ -38,5 +38,10 @@ export default {
   methods: {
     ...mapActions(["addCartItem"]),
   },
+  data () {
+  return {
+    publicPath: process.env.BASE_URL
+  }
+}
 };
 </script>
