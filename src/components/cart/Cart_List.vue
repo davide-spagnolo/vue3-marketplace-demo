@@ -8,7 +8,7 @@
     </p>
     <ul>
       <li class="cart-item" v-for="cartItem in cartItems" :key="cartItem.id">
-          <CartListItem :cartItem="cartItem"/>
+        <CartListItem :cartItem="cartItem" />
       </li>
       <div class="notification is-success">
         <button class="delete"></button>
@@ -17,20 +17,21 @@
           <span class="has-text-weight-bold">{{ cartQuantity }}</span>
         </p>
       </div>
-      <br>
+      <br />
     </ul>
     <div class="buttons">
-    <button :disabled="!cartItems.length" class="button is-info">
-      Checkout (<span class="has-text-weight-bold">${{ cartTotal }}</span>)
-    </button>
+      <button :disabled="!cartItems.length" class="button is-info">
+        Checkout (<span class="has-text-weight-bold">${{ cartTotal }}</span
+        >)
+      </button>
 
- <button class="button is-danger is-outlined" @click="removeAllCartItems">
-    <span>Delete All items</span>
-    <span class="icon is-small">
-      <i class="fas fa-times"></i>
-    </span>
-  </button>
-       </div>
+      <button class="button is-danger is-outlined" @click="removeAllCartItems">
+        <span>Delete All items</span>
+        <span class="icon is-small">
+          <i class="fas fa-times"></i>
+        </span>
+      </button>
+    </div>
   </div>
 </template>
 <script>
@@ -39,7 +40,7 @@ import CartListItem from "./Cart_List_Item";
 export default {
   name: "CartList",
   components: {
-    CartListItem
+    CartListItem,
   },
   computed: {
     ...mapGetters(["cartItems", "cartTotal", "cartQuantity"]),
@@ -49,6 +50,6 @@ export default {
   },
   methods: {
     ...mapActions(["removeAllCartItems"]),
-  }
+  },
 };
 </script>
