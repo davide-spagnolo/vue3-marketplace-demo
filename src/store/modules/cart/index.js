@@ -15,12 +15,21 @@ const mutations = {
     },
     addCartItem ({ commit }, cartItem) {
       axios.post('/api/cart', cartItem).then((response) => {
+        console.log("request",cartItem)
+        commit('UPDATE_CART_ITEMS', response.data)
+      });
+    },
+    addCartItemQuantity ({ commit }, cartItem) {
+      axios.post('/api/cart/add/quantity', cartItem).then((response) => {
+        console.log("request",cartItem)
         commit('UPDATE_CART_ITEMS', response.data)
       });
     },
     removeCartItem ({ commit }, cartItem) {
-      axios.delete('/api/cart/delete', cartItem).then((response) => {
-        console.log(response)
+      const article = { title: "Vue POST Request Example" };
+      axios.delete('/api/cart/delete', { data: cartItem }).then((response) => {
+        console.log("response:",response)
+        console.log("request",cartItem)
         commit('UPDATE_CART_ITEMS', response.data)
       });
     },

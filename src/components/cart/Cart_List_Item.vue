@@ -8,7 +8,7 @@
         </span>
 
         <div>
-          <button  @click="addCartItem(cartItem)"></button>
+          <button  @click="addCartItemQuantity(cartItem)"></button>
           <button  @click="removeCartItem(cartItem)"></button>
         </div>
       </div>
@@ -24,7 +24,8 @@ export default {
   methods: {
     ...mapActions([
       'addCartItem',
-      'removeCartItem'
+      'removeCartItem',
+      'addCartItemQuantity'
     ])
   }
 }
