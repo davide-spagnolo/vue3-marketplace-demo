@@ -1,24 +1,26 @@
 <template>
-  <div id="navbar" class="relative h-8 w-full bg-indigo-500">
-    <div id="button bar" class="h-8 ml-8 w-1/4">
-      <button class="h-full text-white hover:bg-indigo-700">
+  <div id="navbar" class="relative h-12 w-full bg-green-300">
+    <div id="button bar" class="h-12 ml-8 w-1/4">
+      <button
+        class="bg-green-300 hover:bg-green-200 h-12 w-40 items-center justify-center text-white hover:text-white font-bold focus:outline-none"
+      >
         <a class="" href=""> About Us </a>
       </button>
-      <button class="h-full text-white hover:bg-indigo-700">
+      <button
+        class="bg-green-300 hover:bg-green-200 h-12 w-40 items-center justify-center text-white hover:text-white font-bold focus:outline-none"
+      >
         <a class="" href=""> Store </a>
       </button>
     </div>
-    <div class="absolute inset-x-5 top-0">
-      <p class=" text-white text-center mr-8">
-        +123 12345656
-      </p>
+    <div class="absolute inset-x-12 top-3">
+      <p class="text-white text-center mr-12 font-bold">+123 12345656</p>
     </div>
     <div class="absolute top-0 right-0">
       <button
-        class="h-full text-white rounded-lg bg-indigo-400 hover:bg-indigo-700 mr-8"
+        class="bg-red-500 hover:bg-green-500 h-12 w-40 items-center justify-center text-white hover:text-white font-bold focus:outline-none"
       >
         <router-link to="/cart">
-          <p>
+          <p class="text-white hover:text-white">
             Total cart items: <span> {{ cartQuantity }}</span>
           </p>
         </router-link>

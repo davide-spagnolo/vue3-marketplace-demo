@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       gridAutoFlow: ['hover', 'focus'],
+      backgroundColor: ['active']
     },
   },
   variants: {},
