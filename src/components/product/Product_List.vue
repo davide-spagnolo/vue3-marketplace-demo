@@ -1,13 +1,11 @@
 <template>
-  <div class="container is-fluid">
-    <div class="tile is-ancestor">
-      <div
-        class="tile is-parent"
-        v-for="productItem in productItems.items"
-        :key="productItem.sys.id"
-      >
-        <ProductListItem :productItem="productItem" />
-      </div>
+  <div class="grid md:grid-flow-col grid-cols-3 grid-rows-3 gap-4">
+    <div
+      class="tile is-parent"
+      v-for="productItem in productItems.items"
+      :key="productItem.sys.id"
+    >
+      <ProductListItem :productItem="productItem" />
     </div>
   </div>
 </template>
